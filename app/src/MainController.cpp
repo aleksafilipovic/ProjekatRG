@@ -8,7 +8,7 @@
 #include <engine/platform/PlatformEventObserver.hpp>
 #include <engine/resources/ResourcesController.hpp>
 #include<GuiController.hpp>
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 #include <glm/gtc/random.hpp>
 #include <engine/graphics/GraphicsController.hpp>
 #include <engine/graphics/OpenGL.hpp>
@@ -139,7 +139,7 @@ void MainController::draw_asteroids() {
         model_matrices.push_back(model);
     }
 
-
+    shader->set_float("shininess", 4.0f);
     asteroid->draw_instanced(shader, model_matrices);
 }
 
@@ -180,6 +180,7 @@ void MainController::draw_ufo() {
     model = glm::scale(model, glm::vec3(ufo_scale));
     shader->set_mat4("model", model);
 
+    shader->set_float("shininess", 32.0f);
     ufo->draw(shader);
 
 }
@@ -219,7 +220,6 @@ void MainController::update_scene() {
                 float speed = 7.0f;
                 ufo_pos += dir_from_sun * speed * dt;
 
-                float dist = glm::distance(ufo_pos, sun_pos);
                 if (timer_for_scaling > 10.0f) ufo_visible = false;
             }
 
