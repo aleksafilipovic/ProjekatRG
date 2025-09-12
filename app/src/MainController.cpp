@@ -151,7 +151,7 @@ void MainController::draw_sun() {
     engine::resources::Model *sun = resources->model("sun");
     engine::resources::Shader *shader = resources->shader("default");
     shader->use();
-    shader->set_vec3("emissive", emissive_color);
+    shader->set_vec3("emissiveColor", emissive_color);
     set_up_shader_uniforms(shader, false, false);
     glm::mat4 model = glm::mat4(1.0f);
     model = glm::translate(model, sun_pos);

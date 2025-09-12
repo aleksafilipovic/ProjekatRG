@@ -29,12 +29,12 @@ layout (location = 0) out vec4 FragColor;
 in vec2 TexCoords;
 
 uniform sampler2D texture_diffuse1;
-uniform vec3 emissive;
+uniform vec3 emissiveColor;
 
 uniform float emissiveStrength;
 
 void main() {
     vec3 base = texture(texture_diffuse1, TexCoords).rgb;
-    vec3 color = base + emissive * emissiveStrength;
+    vec3 color = base + emissiveColor * emissiveStrength;
     FragColor = vec4(color, 1.0);
 }

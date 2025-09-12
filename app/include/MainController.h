@@ -84,9 +84,9 @@ public:
 
 
     glm::vec3 dirLightDirection = glm::vec3(-1.0f, -1.0f, -1.0f);
-    glm::vec3 dirLightColorAmbient = glm::vec3(0.03f, 0.03f, 0.03f);
-    glm::vec3 dirLightColorDiffuse = glm::vec3(0.2f, 0.2f, 0.2f);
-    glm::vec3 dirLightColorSpecular = glm::vec3(0.2f, 0.2f, 0.02f);
+    glm::vec3 dirLightColorAmbient = glm::vec3(0.03f, 0.03f, 0.03f) * 0.1f;
+    glm::vec3 dirLightColorDiffuse = glm::vec3(0.2f, 0.2f, 0.2f) * 0.1f;
+    glm::vec3 dirLightColorSpecular = glm::vec3(0.2f, 0.2f, 0.02f) * 0.1f;
 
 
 
