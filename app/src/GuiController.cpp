@@ -44,7 +44,7 @@ void GUIController::draw() {
         }
 
         if (ImGui::BeginTabItem("Directional light")) {
-            ImGui::DragFloat3("Direction", &mainController->dirLightDirection.x, 0.01, 0.0, 1.0);
+            ImGui::DragFloat3("Direction", &mainController->dirLightDirection.x, 0.01, -1.0f, 1.0f);
 
             ImGui::DragFloat3("Ambient color", &mainController->dirLightColorAmbient.x, 0.01, 0.0, 100.0);
             ImGui::DragFloat3("Diffuse color", &mainController->dirLightColorDiffuse.x, 0.01, 0.0, 100.0);
